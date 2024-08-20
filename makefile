@@ -8,3 +8,4 @@ build:
 
 install:
 	cp sg13g2.txt $(HOME)/opentools/GDS3D/techfiles/
+	cp sg13g2.txt $(HOME)/opentools/GDS3D_fork/techfiles/
