@@ -1,0 +1,19 @@
+on: push
+
+jobs:
+  update-build-badge:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+      - name: Run tests
+        run: npm test
+      - name: Update build badge
+        if: success()
+        uses: schneegans/dynamic-badges-action@v1
+        with:
+          auth: ${{ secrets.GIST_SECRET }}  
+          gistID: 12345abcde
+          filename: build.json
+          label: Build
+          message: passing
+          color: green
